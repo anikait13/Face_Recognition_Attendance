@@ -1,5 +1,3 @@
-
-
 def camera():
     import cv2
 
@@ -7,9 +5,10 @@ def camera():
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
     # To capture video from webcam.
-    cap = cv2.VideoCapture(0)
+
 
     while True:
+        cap = cv2.VideoCapture(0)
         # Read the frame
         _, img = cap.read()
         # Convert to grayscale
@@ -37,12 +36,3 @@ def camera():
     # Release the VideoCapture object
     cap.release()
     cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
-

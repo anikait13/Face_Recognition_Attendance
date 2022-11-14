@@ -14,4 +14,3 @@ yag.send(
     subject="Attendance Report",  # email subject
     contents=body,  # email body
 )
-

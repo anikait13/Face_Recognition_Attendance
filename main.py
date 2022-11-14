@@ -1,8 +1,13 @@
-import os  # accessing the os functions
-
 import check_camera
+import Capture_Image
+import train_images
+import Recognize
 
 def title_bar():
+
+
+    # title of the program
+
 
     print("\t**********************************************")
     print("\t***** Face Recognition Attendance System *****")
@@ -29,6 +34,15 @@ def mainMenu():
             if choice == 1:
                 checkCamera()
                 break
+            elif choice == 2:
+                CaptureFaces()
+                break
+            elif choice == 3:
+                Trainimages()
+                break
+            elif choice == 4:
+                RecognizeFaces()
+                break
             elif choice == 6:
                 print("Thank You")
                 break
@@ -49,6 +63,32 @@ def checkCamera():
     mainMenu()
 
 
+# --------------------------------------------------------------
+# calling the take image function form capture image.py file
+
+def CaptureFaces():
+    Capture_Image.takeImages()
+    key = input("Enter any key to return main menu")
+    mainMenu()
+
+
+# -----------------------------------------------------------------
+# calling the train images from train_images.py file
+
+def Trainimages():
+    train_images.TrainImages()
+    key = input("Enter any key 4to return main menu")
+    mainMenu()
+
+
+# --------------------------------------------------------------------
+# calling the recognize_attendance from recognize.py file
+
+def RecognizeFaces():
+    Recognize.recognize_attandence()
+    key = input("Enter any key to return main menu")
+    mainMenu()
 # ---------------main driver ------------------
 mainMenu()
+
 
